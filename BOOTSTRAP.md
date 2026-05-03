@@ -1,0 +1,21 @@
+# BOOTSTRAP.md - OpenClaw Runtime Focus
+
+- This workspace is the live control context for the local OpenClaw deployment under `/home/cunhadev/.openclaw`.
+- Primary runtime path:
+  - Gateway service: `openclaw-gateway.service`
+  - Model provider: local Ollama at `http://127.0.0.1:11434`
+  - Primary model: `ollama/glm-5.1:cloud`
+  - Fast fallback / maintenance model: `ollama/qwen3:4b`
+  - Main human channel: Telegram DM with Cunha (`1073265075`)
+- Validate operational claims with fresh evidence from:
+  - `systemctl --user status openclaw-gateway.service`
+  - `openclaw gateway status`
+  - `openclaw channels status --probe`
+  - `journalctl --user -u openclaw-gateway.service`
+  - `systemctl --user status ollama.service`
+  - `openclaw agent --agent main --message "Responda apenas OK" --json`
+- Known engineering constraints:
+  - `MEMORY.md` is large and can be truncated during bootstrap injection.
+  - First-turn latency is dominated more by OpenClaw context/runtime preparation than by the Ollama reply itself.
+  - Restart behavior must be checked against active runs because systemd can interrupt graceful draining if stop timeout is too short.
+- When precision matters, read the relevant workspace file directly instead of assuming bootstrap injection was complete.

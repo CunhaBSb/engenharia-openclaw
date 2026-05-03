@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "skills": {
+    "git": {
+      "version": "1.0.8",
+      "installedAt": 1777492543113
+    },
+    "git-workflows": {
+      "version": "1.0.0",
+      "installedAt": 1777492571117
+    },
+    "bestlua": {
+      "version": "1.0.0",
+      "installedAt": 1777492628096
+    },
+    "gemini": {
+      "version": "1.0.0",
+      "installedAt": 1777494389737
+    },
+    "gemini-deep-research": {
+      "version": "1.0.0",
+      "installedAt": 1777494398732
+    },
+    "gemini-web-search": {
+      "version": "1.0.0",
+      "installedAt": 1777494409588
+    },
+    "gemini-skill": {
+      "version": "0.1.0",
+      "installedAt": 1777494414402
+    },
+    "gemini-sub-agent": {
+      "version": "1.0.0",
+      "installedAt": 1777494427611
+    },
+    "n8n-workflow-automation": {
+      "version": "1.0.0",
+      "installedAt": 1777777413467
+    },
+    "n8n-api": {
+      "version": "1.0.1",
+      "installedAt": 1777777455502
+    },
+    "n8n-monitor": {
+      "version": "1.0.1",
+      "installedAt": 1777777461747
+    }
+  }
+}

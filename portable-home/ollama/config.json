@@ -1,0 +1,11 @@
+{
+  "integrations": {
+    "openclaw": {
+      "models": [
+        "glm-5.1:cloud"
+      ]
+    }
+  },
+  "last_model": "kimi-k2.6:cloud",
+  "last_selection": "openclaw"
+}

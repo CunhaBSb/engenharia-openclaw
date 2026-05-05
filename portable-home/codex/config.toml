@@ -1,0 +1,89 @@
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+project_doc_fallback_filenames = ["codex.md"]
+developer_instructions = """
+LuaEduca operating mode:
+- Read CONTEXT.md, MEMORY.md, AGENTS.md, and codex.md before non-trivial work.
+- Ground every material claim in filesystem state, live command output, MCP output, or official vendor docs.
+- Prefer deterministic prompts, minimal diffs, explicit file paths, and explicit verification.
+- Use Gemini or project-bridge for planning; use Codex for implementation and verification.
+"""
+personality = "pragmatic"
+approvals_reviewer = "user"
+[projects."/home/cunhadev/Projetos/LuaEduca"]
+trust_level = "trusted"
+
+[projects."/home/cunhadev/Projetos/Base"]
+trust_level = "trusted"
+
+[projects."/home/cunhadev/Projetos/LuaEduca/web"]
+trust_level = "trusted"
+
+[projects."/home/cunhadev"]
+trust_level = "trusted"
+
+[projects."/home/cunhadev/Projetos/M5MaxProduções/PainelAdmin-M5Max"]
+trust_level = "trusted"
+
+[projects."/home/cunhadev/.openclaw/workspace/Phantom"]
+trust_level = "trusted"
+
+[notice]
+hide_full_access_warning = true
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[mcp]
+remote_mcp_client_enabled = true
+
+[mcp_servers.supabase]
+url = "https://mcp.supabase.com/mcp?project_ref=zhpececfyqbjiivvrohi&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cbranching%2Cfunctions%2Cstorage"
+
+[mcp_servers.context7]
+type = "http"
+url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.context7.http_headers]
+CONTEXT7_API_KEY = "<REDACTED_CONTEXT7_API_KEY>"
+
+[mcp_servers.sequential-thinking]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+[mcp_servers.sequential-thinking.env]
+DISABLE_THOUGHT_LOGGING = "true"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@executeautomation/playwright-mcp-server"]
+
+[mcp_servers.fetch]
+command = "/home/cunhadev/.local/bin/uvx"
+args = ["mcp-server-fetch"]
+
+[mcp_servers.n8n-mcp]
+url = "https://api.n8n-mcp.com/mcp"
+
+[mcp_servers.filesystem]
+command = "/home/cunhadev/Projetos/LuaEduca/scripts/project-filesystem.sh"
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."vercel@openai-curated"]
+enabled = true
+
+[apps.connector_69a7602494508191a8157d99b9524b39.tools.supabase_execute_sql]
+approval_mode = "approve"
+
+[features]
+memories = true
+
+[memories]
+no_memories_if_mcp_or_web_search = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4

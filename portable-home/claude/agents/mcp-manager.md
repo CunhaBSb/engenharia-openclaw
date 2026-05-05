@@ -1,0 +1,1 @@
+/home/cunhadev/claudekit-skills/.claude/agents/mcp-manager.md

@@ -91,22 +91,41 @@ Nao use como changelog longo. O runtime atual continua sendo a fonte principal.
 - App Flutter com Riverpod, `go_router`, `supabase_flutter` e `dio`.
 - Objetivo recorrente: manter paridade com o backend/web, sem inventar stack paralela.
 
-### Auditoria e estado tecnico
+### Auditoria completa (maio 2026)
 
 - Relatorio principal: `LuaEducaWeb/AUDIT_REPORT.md`.
-- Auditoria encontrou 27 problemas originalmente; a primeira leva de fixes ja limpou build, lint e testes.
-- Estado verificado apos fase 1: build OK, lint OK, unit tests OK.
-- Fixes aplicados incluiram compare timing-safe, limite de senha, CORS do Stripe, limites de input, `crypto.randomUUID()` para upload path, validacao de UUID e bloqueio de `n8n-teste` em producao.
+- 27 problemas originais; fase 1 limpou build, lint e testes.
 
-### Pendencias mais importantes
+### P0 implementados (maio 2026)
 
-- Hash de `magic_link_token` com migracao segura.
-- Rate limiting de login de aluno.
-- Rate limiting de magic login.
-- Rate limiting de `send-support-email`.
-- Separar resolucao de sessoes orfas de endpoint de leitura.
-- Unificar parsing SSE e reduzir duplicacao.
-- Validar env vars no startup das funcoes.
+- Rate limiting migrado de in-memory Map para Postgres RPC com fallback in-memory. Callers: student-auth, send-support-email, homepage-chat-proxy.
+- n8n-teste agora usa validateEnv() com SUPABASE_URL + SERVICE_ROLE_KEY.
+- CORS: localhost origins removidos de producao. Ativos apenas com ENVIRONMENT != production.
+- Nova Edge Function health-check: probes Supabase, n8n, OpenRouter.
+- Script tunnel-health-check.sh: monitora Docker + tunnel com auto-restart.
+
+### P1 pendentes (maio 2026)
+
+- Remover auth duplicada n8n (proxy valida sessao, n8n valida novamente = +200-400ms).
+- Refatorar n8n-proxy em modulos: sse-handler, persistence, context-builder, upstream.
+- Refatorar useChatSend.ts (743 linhas) em hooks menores.
+- Circuit breaker/retry com backoff no n8n.
+- SSE parser compartilhado frontend/backend (DRY).
+- Dividir workflow PRO (45 nodes) em sub-workflows.
+
+### Pendencias resolvidas (maio 2026)
+
+- Hash de `magic_link_token` com migracao segura — C-02: SHA-256 hash, coluna `magic_link_token_hash`.
+- Rate limiting de login de aluno — 10/IP/15min via `_shared/rate-limit.ts`.
+- Rate limiting de magic login — 5/IP/15min.
+- Rate limiting de magic-token regenerate — 3/guardian/15min.
+- Rate limiting de `send-support-email` — 3/IP/hora.
+- Rate limiting de homepage trial flood — 10/IP/min.
+- Separar resolucao de sessoes orfas de endpoint de leitura — `cleanup-orphan-sessions` + `cleanup-sessions` dedicados.
+- Validar env vars no startup das funcoes — `_shared/env.ts` com `validateEnv()`, cobertura 100% (exceto `n8n-teste`).
+- SSE parser unificado — `_shared/sse-parser.ts` criado.
+- Migrations de seguranca — 3 arquivos SQL para magic_link_hash, stripe_idempotency, rate_limits.
+- P0 security hardening — rate-limit Postgres, CORS localhost conditional, n8n-teste validateEnv, health-check endpoint.
 
 ### Docs para abrir quando necessario
 

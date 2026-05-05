@@ -1,0 +1,155 @@
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"src/core/engine\.cpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"risk_engine/risk_engine\.py\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"src/stealth/forensics\.cpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"src/ai/inference\.cpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"include/wraithm/memory/reader\.hpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"src/memory/reader\.cpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"CMakeLists\.txt\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"src/features/radar\.cpp\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "write_file"
+argsPattern = '\\0\"file_path\":\"simulation_test\.py\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "git" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"\.gitignore\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "git", "grep" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"workspace/AGENTS\.md\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "find", "echo" ]
+allowRedirection = true
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"workspace/Base/GEMINI\.md\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "replace"
+argsPattern = '\\0\"file_path\":\"openclaw\.json\"\\0'
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "systemctl" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "ollama" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "jq", "mv" ]
+allowRedirection = true
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "openclaw" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "journalctl" ]
+modes = [ "default", "autoEdit", "yolo" ]
+
+[[rule]]
+decision = "allow"
+priority = 950
+toolName = "run_shell_command"
+commandPrefix = [ "systemctl", "sleep", "openclaw" ]
+modes = [ "default", "autoEdit", "yolo" ]

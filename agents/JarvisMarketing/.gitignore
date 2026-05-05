@@ -1,0 +1,6 @@
+.openclaw/
+.env
+*.key
+*.pem
+**/secrets*
+.DS_Store

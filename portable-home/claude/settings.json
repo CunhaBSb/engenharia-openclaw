@@ -1,0 +1,49 @@
+{
+  "model": "opus",
+  "extraKnownMarketplaces": {
+    "n8n-mcp-skills": {
+      "source": {
+        "source": "github",
+        "repo": "czlonkowski/n8n-skills"
+      }
+    }
+  },
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "<REDACTED>"
+      ],
+      "type": "stdio"
+    },
+    "human-mcp": {
+      "command": "npx",
+      "args": [
+        "@goonnguyen/human-mcp"
+      ],
+      "env": {
+        "GOOGLE_GEMINI_API_KEY": "<REDACTED_GEMINI_API_KEY>"
+      },
+      "type": "stdio"
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "type": "stdio"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "type": "stdio"
+    }
+  }
+}

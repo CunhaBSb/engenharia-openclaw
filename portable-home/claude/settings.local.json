@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsb_release -a)",
+      "Bash(echo $SHELL)",
+      "Read(//home/**)",
+      "Bash(dpkg -l)",
+      "Bash(gsettings list-schemas:*)",
+      "Bash(sudo apt:*)",
+      "Bash(chmod:*)",
+      "Bash(wc -l /home/cunhadev/claudekit-skills/.claude/skills/*/*.md)",
+      "Bash(npm --version)",
+      "Bash(pip3 --version)",
+      "Bash(ffmpeg -version)",
+      "Bash(convert --version)",
+      "Bash(docker --version)",
+      "Bash(/home/cunhadev/claudekit-skills/.venv/bin/pip list:*)",
+      "Bash(bash /home/cunhadev/install_claudekit.sh 2>&1)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git status:*)",
+      "Bash(git show:*)",
+      "Read(**)"
+    ]
+  }
+}

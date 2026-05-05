@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "<REDACTED>"
+      ]
+    },
+    "human-mcp": {
+      "command": "npx",
+      "args": [
+        "@goonnguyen/human-mcp"
+      ],
+      "env": {
+        "GOOGLE_GEMINI_API_KEY": "<REDACTED_GEMINI_API_KEY>"
+      }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    }
+  }
+}

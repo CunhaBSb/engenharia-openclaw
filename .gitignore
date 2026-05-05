@@ -1,0 +1,7 @@
+*.tar.gz
+*.zip
+.DS_Store
+
+# Local scratch for manual secret transport
+private-secrets/
+portable-home/.raw/

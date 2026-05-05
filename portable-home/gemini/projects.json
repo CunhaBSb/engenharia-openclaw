@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "/home/cunhadev/Projetos/LuaEduca": "luaeduca",
+    "/home/cunhadev/Projetos/LuaEduca/mobile": "mobile",
+    "/home/cunhadev/Projetos/M5MaxProduções/PainelAdmin-M5Max": "paineladmin-m5max",
+    "/home/cunhadev": "cunhadev",
+    "/home/cunhadev/.openclaw/workspace/Phantom": "phantom",
+    "/home/cunhadev/.openclaw": "openclaw"
+  }
+}

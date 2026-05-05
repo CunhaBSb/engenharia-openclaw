@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-02T23:55:19.665Z",
+  "updatedAt": "2026-05-04T16:02:24.231Z",
   "entries": {
     "memory:memory/2026-04-29.md:1:22": {
       "key": "memory:memory/2026-04-29.md:1:22",
@@ -193,6 +193,132 @@
         "tls-context.cpp",
         "engine.hpp",
         "ssl-utils"
+      ]
+    },
+    "memory:memory/2026-05-04.md:1:58": {
+      "key": "memory:memory/2026-05-04.md:1:58",
+      "path": "memory/2026-05-04.md",
+      "startLine": 1,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "# 🔬 Relatório de Testes — LuaEduca **Data:** 2026-05-04 **Executor:** Jarvis 🤖 --- ## Sumário | Categoria | Total | Pass | Fail | Taxa | |-----------|-------|------|------|------| | **Backend → Supabase** | 4 | 4 | 0 | 100% | | **Backend → n8n-proxy** | 6 | 6 | 0 | 100% | | **n8n Workflows** | 8 | 8 | 0 | 100% | | **End-to-End** | 2 | 2 | 0 | 100% | | **TOTAL** | **20** | **20** | **0** | **100%** | --- ## Testes Backend → Supabase ### ✅ T1: Ping Edge Function Base - **URL:** `https://texgadrxlsagbglfpjgy.supabase.co` - **Resultado:** 204 - **Detalhe:** 60ms ### ✅ T2: Rate Limit — check_rate_limit() - **RPC:** `check_rate_limit('test:ip:127.0.0.1', 10, 900)` - **Resultado:** `{\"all",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8509268882084771,
+      "maxScore": 0.8509268882084771,
+      "firstRecalledAt": "2026-05-04T03:55:15.465Z",
+      "lastRecalledAt": "2026-05-04T03:55:15.465Z",
+      "queryHashes": [
+        "da2972f2a4ce"
+      ],
+      "recallDays": [
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "n8n-proxy",
+        "end-to-end",
+        "texgadrxlsagbglfpjgy.supabase.co",
+        "check-rate-limit",
+        "127.0.0.1",
+        "relatório",
+        "testes",
+        "luaeduca"
+      ]
+    },
+    "memory:memory/2026-05-03.md:1:39": {
+      "key": "memory:memory/2026-05-03.md:1:39",
+      "path": "memory/2026-05-03.md",
+      "startLine": 1,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "# Memory Flush — 2026-05-03 (final) ## LuaEduca — Tudo Concluído ### P0s ✅ - Rate limiting Postgres (migration APLICADA) - n8n-teste hardening, CORS cleanup, health-check ### P1s ✅ - n8n-proxy refatorado (1405→7 módulos) - Circuit breaker + retry com backoff - HMAC auth delegation (proxy→n8n) - Auth duplicada n8n (workflow PRO atualizado com HMAC verify) ### P2s ✅ (desta rodada) - **systemd tunnel-health-check** — system service rodando, todos 3 checks OK - Script adaptado: fallback HTTP quando docker socket inacessível - Service: /etc/systemd/system/luaeduca-tunnel-health.service - **useChatSend refatorado** — 743→4 hooks (556+69+55+103=783 linhas, mas modulares) - useStreamingDel",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.631553781032562,
+      "maxScore": 0.5499255955219269,
+      "firstRecalledAt": "2026-05-04T03:55:15.465Z",
+      "lastRecalledAt": "2026-05-04T16:02:24.231Z",
+      "queryHashes": [
+        "da2972f2a4ce",
+        "d07dc57414e0",
+        "e9baf2400539"
+      ],
+      "recallDays": [
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "n8n-teste",
+        "health-check",
+        "n8n-proxy",
+        "tunnel-health-check",
+        "flush",
+        "final",
+        "luaeduca",
+        "tudo"
+      ]
+    },
+    "memory:memory/2026-05-04.md:174:216": {
+      "key": "memory:memory/2026-05-04.md:174:216",
+      "path": "memory/2026-05-04.md",
+      "startLine": 174,
+      "endLine": 216,
+      "source": "memory",
+      "snippet": "└─────────────────────────────────────────────────────────────┘ ``` --- ## Status dos Componentes | Componente | Status | Latência | Detalhe | |-----------|--------|----------|---------| | Supabase | ✅ Healthy | ~60ms | Edge Functions respondendo | | n8n | ✅ Healthy | ~158ms | Docker healthy, workflows ativos | | OpenRouter | ✅ Config OK | N/A | Configurado, testado via T19 | | Circuit Breaker | ✅ Ativo | — | n8n (5/30s) + OpenRouter (3/20s) | | HMAC Auth | ✅ Ativo | — | Proxy→n8n delegation operacional | | Rate Limit | ✅ Ativo | — | Postgres RPC + fallback in-memory | | Tunnel Monitor | ✅ Running | — | systemd service, 3/3 checks | --- ## Conclusão **Todos os 20 testes passaram.** -",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5552793249487876,
+      "maxScore": 0.5552793249487876,
+      "firstRecalledAt": "2026-05-04T16:02:24.231Z",
+      "lastRecalledAt": "2026-05-04T16:02:24.231Z",
+      "queryHashes": [
+        "e9baf2400539"
+      ],
+      "recallDays": [
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "router",
+        "n/a",
+        "5/30s",
+        "3/20s",
+        "in-memory",
+        "3/3",
+        "status",
+        "dos"
+      ]
+    },
+    "memory:memory/2026-05-04.md:208:249": {
+      "key": "memory:memory/2026-05-04.md:208:249",
+      "path": "memory/2026-05-04.md",
+      "startLine": 208,
+      "endLine": 249,
+      "source": "memory",
+      "snippet": "- O workflow PRO tem 47 nodes — a refatoração em sub-workflows (P2 pendente) melhoraria a manutenibilidade. # 📝 Progresso LuaEduca — 4 mai 2026 ## Concluído Hoje ### 1. Sub-workflow PFA Extraído ✅ - **Criado:** `LuaEduca-PFA-Update` (ID: `nyrZW1Nq440w0nOG`, 8 nodes) - **Webhook:** `/webhook/lua-pfa-update` - **Status:** Ativo, validado, typeVersions atualizados - **Funcionalidade:** Fire-and-forget async após resposta da Lua - **PRO modificado:** - Removidos 5 nodes PFA inline (🧠 PFA: Montar Prompt, ❓ PFA Necessário?, 🤖 PFA: Chamar LLM, 💾 PFA: Processar, 💾 PFA: Salvar) - Adicionado 1 node `🔗 Chamar PFA Update` (HTTP call ao webhook) - Nodes PRO: **47 → 43 → 40** (nodes reais, e",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5428980752825736,
+      "maxScore": 0.5428980752825736,
+      "firstRecalledAt": "2026-05-04T16:02:24.231Z",
+      "lastRecalledAt": "2026-05-04T16:02:24.231Z",
+      "queryHashes": [
+        "e9baf2400539"
+      ],
+      "recallDays": [
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "sub-workflows",
+        "sub-workflow",
+        "luaeduca-pfa-update",
+        "webhook/lua-pfa-update",
+        "fire-and-forget",
+        "workflow",
+        "pro",
+        "tem"
       ]
     }
   }
